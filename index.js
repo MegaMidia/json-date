@@ -1,17 +1,5 @@
-
-const jsonToDate = (date) => {
-    return new Date(date.year, date.month - 1, date.day, 0, 0, 0, 0);
-}
-
-const weekNames = {
-    0 : 'sun',
-    1 : 'mon',
-    2 : 'tue',
-    3 : 'wed',
-    4 : 'thu',
-    5 : 'fri',
-    6 : 'sat'
-}
+const jsonToDate = require('./src/parsers/jsonToDate')
+const weekNames = require('./src/constants/weekNames')
 
 const periodValid = (datePeriod) => {
     let today = new Date()
