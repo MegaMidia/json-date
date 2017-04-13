@@ -1,5 +1,51 @@
 const assert = require('assert')
 
+
+describe('Date Conversions', () => {
+    it('should convert without errors', ()=>{
+        const date = require('../index')
+        
+        const today = new Date()
+        
+        const todayJson = date.dateToJson( today );
+        assert.notEqual( today.getTime() , date.jsonToDate(todayJson).getTime() )
+    })
+
+    it('should convert without errors', ()=>{
+        const date = require('../index')
+        
+        const today = new Date()
+        today.setSeconds(0)
+        today.setHours(0)
+        today.setMilliseconds(0)
+        today.setMinutes(0)
+
+        const todayJson = date.dateToJson( today );
+        assert.equal( today.getTime() , date.jsonToDate(todayJson).getTime() )
+    })
+
+    it('should convert without errors', ()=>{
+        const date = require('../index')
+        const today = new Date()
+        const todayJson = date.dateToJson( today );
+        assert.equal(todayJson.day, today.getDate())
+
+    })
+
+
+    it('should convert without errors', ()=>{
+        const date = require('../index')
+        const today = new Date()
+        const todayJson = date.dateToJson( today );
+        assert.equal(todayJson.day, today.getDate())
+        assert.equal(todayJson.month, today.getMonth() + 1)
+        assert.equal(todayJson.year, today.getFullYear())
+        console.log(today.getHours())
+        assert.equal(todayJson.hour, today.getHours())
+        assert.equal(todayJson.minute, today.getMinutes())
+    })
+})
+
 describe( "Date validations" , () => {
 
     let dateIn = {
@@ -74,3 +120,4 @@ describe( "Date validations" , () => {
         assert.equal( DateUtil.periodValid( datePeriod ), true, "Date period is not valid");
     }) 
 })
+

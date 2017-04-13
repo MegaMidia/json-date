@@ -1,5 +1,6 @@
 const jsonToDate = require('./src/parsers/jsonToDate')
 const weekNames = require('./src/constants/weekNames')
+const dateToJson = require('./src/parsers/dateToJson')
 
 const periodValid = (datePeriod) => {
     let today = new Date()
@@ -30,6 +31,7 @@ const periodValid = (datePeriod) => {
 
 module.exports = {
     jsonToDate,
+    dateToJson,
     weekNames,
     periodValid
 }
