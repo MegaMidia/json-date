@@ -17,8 +17,8 @@ const periodValid = (datePeriod) => {
     let dateOut = datePeriod.out;
  
 
-    console.log( (today.getHours() / 60) + today.getMinutes(), (dateIn.hour / 60) + dateIn.minute ) 
-    console.log( (today.getHours() / 60) + today.getMinutes(), (dateOut.hour / 60) + dateOut.minute )
+    console.log( (today.getHours() / 60) + today.getMinutes() > (dateIn.hour / 60) + dateIn.minute ) 
+    console.log( (today.getHours() / 60) + today.getMinutes() < (dateOut.hour / 60) + dateOut.minute )
     
     return ( 
         datePeriod && (
