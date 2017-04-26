@@ -20,8 +20,8 @@ const periodValid = (datePeriod) => {
     console.log(today.getMinutes() <= dateOut.minute )
     console.log(today.getHours() >= dateIn.hour) 
     console.log(today.getHours() <= dateOut.hour )
-    console.log(todayDate.getTime() > jsonToDate(dateIn).getTime())
-    console.log(todayDate.getTime() < jsonToDate(dateOut).getTime())
+    console.log(todayDate.getTime() >= jsonToDate(dateIn).getTime())
+    console.log(todayDate.getTime() <= jsonToDate(dateOut).getTime())
     console.log(datePeriod.week[ weekNames[today.getDay()] ] != false  )
     
     return ( 
