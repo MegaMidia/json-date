@@ -16,13 +16,9 @@ const periodValid = (datePeriod) => {
     let dateIn = datePeriod.in;
     let dateOut = datePeriod.out;
  
-    console.log(today.getMinutes() >= dateIn.minute )
-    console.log(today.getMinutes() <= dateOut.minute )
-    console.log(today.getHours() >= dateIn.hour) 
-    console.log(today.getHours() <= dateOut.hour )
-    console.log(todayDate.getTime() >= jsonToDate(dateIn).getTime())
-    console.log(todayDate.getTime() <= jsonToDate(dateOut).getTime())
-    console.log(datePeriod.week[ weekNames[today.getDay()] ] != false  )
+
+    console.log(today.getHours() / 60 + today.getMinutes() >= dateIn.hour / 60 + dateIn.minute ) 
+    console.log(today.getHours() / 60 + today.getMinutes() <= dateOut.hour / 60 + dateOut.minute )
     
     return ( 
         datePeriod && (
