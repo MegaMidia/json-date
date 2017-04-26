@@ -2,7 +2,7 @@ const jsonToDate = require('./src/parsers/jsonToDate')
 const weekNames = require('./src/constants/weekNames')
 const dateToJson = require('./src/parsers/dateToJson')
 
-console.log("json-date@0.0.2")
+console.log("json-date@0.0.3")
 
 const periodValid = (datePeriod) => {
     let today = new Date()
