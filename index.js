@@ -2,7 +2,7 @@ const jsonToDate = require('./src/parsers/jsonToDate')
 const weekNames = require('./src/constants/weekNames')
 const dateToJson = require('./src/parsers/dateToJson')
 
-console.log("json-date@0.0.4")
+console.log("json-date@0.0.5")
 
 const periodValid = (datePeriod) => {
     let today = new Date()
@@ -19,8 +19,8 @@ const periodValid = (datePeriod) => {
     return ( 
         datePeriod && (
             datePeriod.undefined || (
-                (today.getHours() / 60) + today.getMinutes() >= (dateIn.hour / 60) + dateIn.minute &&  
-                (today.getHours() / 60) + today.getMinutes() <= (dateOut.hour / 60) + dateOut.minute &&   
+                today.getHours() * 60 + today.getMinutes() >= dateIn.hour * 60 + dateIn.minute &&  
+                today.getHours() * 60 + today.getMinutes() <= dateOut.hour * 60 + dateOut.minute &&   
                 todayDate.getTime() >= jsonToDate(dateIn).getTime() &&
                 todayDate.getTime() <= jsonToDate(dateOut).getTime() &&
                 datePeriod.week[ weekNames[today.getDay()] ] != false 
