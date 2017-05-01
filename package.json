@@ -1,6 +1,6 @@
 {
-  "name": "json-date",
-  "version": "0.0.1",
+  "name": "@mega-midia/json-date",
+  "version": "0.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
